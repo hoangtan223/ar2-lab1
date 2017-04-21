@@ -6,15 +6,15 @@ class Todo
 
   def display
     "<html>
-  <head>
-    <title>#{@title}</title>
-  </head>
-  <body>
-    <ul>
-      <li>#{@items[0]}</li>
-      <li>#{@items[1]}</li>
-    </ul>
-  <body?
-</html>"
+      <head>
+        <title>#{@title}</title>
+      </head>
+      <body>
+        <ul>
+          <li>#{@items[0]}</li>
+          <li>#{@items[1]}</li>
+        </ul>
+      <body?
+    </html>"
   end
 end
