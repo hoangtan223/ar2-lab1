@@ -7,15 +7,15 @@ end
 class HtmlFormatter < Formatter
   def display(title, items)
     "<html>
-    <head>
-    <title>#{title}</title>
-    </head>
-    <body>
-    <ul>
-    <li>#{items[0]}</li>
-    <li>#{items[1]}</li>
-    </ul>
-    </body>
+      <head>
+        <title>#{title}</title>
+      </head>
+      <body>
+        <ul>
+          <li>#{items[0]}</li>
+          <li>#{items[1]}</li>
+        </ul>
+      </body>
     </html>"
   end
 end
