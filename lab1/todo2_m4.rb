@@ -1,19 +1,19 @@
 class Formatter
-  def display(title, items)
+  def display(todo)
     raise "must be implemented"
   end
 end
 
 class HtmlFormatter < Formatter
-  def display(title, items)
+  def display(todo)
     "<html>
     <head>
-    <title>#{title}</title>
+    <title>#{toto.title}</title>
     </head>
     <body>
     <ul>
-    <li>#{items[0]}</li>
-    <li>#{items[1]}</li>
+    <li>#{todo.items[0]}</li>
+    <li>#{todo.items[1]}</li>
     </ul>
     </body>
     </html>"
@@ -21,11 +21,11 @@ class HtmlFormatter < Formatter
 end
 
 class PlainTextFormatter < Formatter
-  def display(title, items)
+  def display(todo)
     # ...
-    "#{title}
-    #{items[0]}
-    #{items[1]}
+    "#{todo.title}
+    #{todo.items[0]}
+    #{todo.items[1]}
     "
   end
 end
@@ -39,6 +39,6 @@ class Todo
   end
 
   def display
-    @formatter.display(@title,@items)
+    @formatter.display(self)
   end
 end
