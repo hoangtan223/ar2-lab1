@@ -34,7 +34,7 @@ end
 class Todo
   attr_accessor :title, :items, :block
 
-  def initialize(formatter, &block)
+  def initialize(formatter = nil, &block)
     @title = "Todo"
     @items = ["Decide supervisor and driver roles", "Implement Milestone 1"]
     @formatter = formatter
