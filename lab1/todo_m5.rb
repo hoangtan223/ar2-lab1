@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Formatter
   def display(title, items)
     raise "must be implemented"
@@ -31,7 +32,7 @@ class PlainTextFormatter < Formatter
 end
 
 
-class Todo
+class Todo_Tan
   attr_accessor :title, :items, :block
 
   def initialize(formatter = nil, &block)
@@ -51,10 +52,28 @@ class Todo
   end
 end
 
-class TestBlock
-  attr_accessor :attr
 
-  def initialize
+class Todo
+  attr_reader :title, :items
 
+  def initialize(&formatter)
+    @title = "Todo"
+    @items = ["Decide supervisor and driver roles", "Implement Milestone 1"]
+    @formatter = formatter
+  end
+
+  def display
+    @formatter.call(self)
   end
 end
+
+
+todo = Todo.new do |context|
+  # your code here
+  puts "# #{context.title}"
+  context.items.each do |item|
+    puts "- [] #{item}"
+  end
+end
+
+todo.display
